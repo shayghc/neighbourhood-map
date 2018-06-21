@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
 
-class App extends Component {
+export default class App extends React.Component {
+  componentDidMount() {
+    let map = new window.google.maps.Map(document.getElementById('map'), {
+      center: {lat: 50.7934612, lng: -1.1098803},
+      zoom: 14,
+      mapTypeId: 'roadmap',
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id='app'>
+        <div id='map' />
       </div>
     );
   }
-}
-
-export default App;
+};
