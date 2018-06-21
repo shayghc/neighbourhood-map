@@ -1,5 +1,14 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#root,
+#app,
+#map {
+    height: 100%;
+}
+
+html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
