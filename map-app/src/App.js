@@ -17,6 +17,12 @@ export default class App extends React.Component {
             draggable: true,
             title: 'Spinnaker Tower'
         })
+        let infowindow = new window.google.maps.InfoWindow({
+            content: 'Spinnaker Tower in Gunwharf Quays'
+        })
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        })
     }
 
     render() {
