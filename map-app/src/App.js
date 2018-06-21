@@ -8,7 +8,7 @@ export default class App extends React.Component {
         let markers = [];
         let map = new window.google.maps.Map(document.getElementById("map"), {
             center: { lat: 50.7934612, lng: -1.1098803 },
-            zoom: 14,
+            zoom: 12,
             mapTypeId: "roadmap"
         });
         // Markers
@@ -26,6 +26,7 @@ export default class App extends React.Component {
         ];
 
         let largeInfoWindow = new window.google.maps.InfoWindow();
+        let bounds = new window.google.maps.LatLngBounds();
 
         // Create an array of markers on initialise
         for (let i = 0; i < locations.length; i++) {
@@ -41,10 +42,13 @@ export default class App extends React.Component {
             });
             // Push each marker to the markers array
             markers.push(marker);
+            // Extend the boundaries of the map for the Markers
+            bounds.extend(marker.position);
             // Create an onclick event for the infowindows
             marker.addListener('click', function() {
                 populateInfoWindow(this, largeInfoWindow);
             });
+            map.fitBounds(bounds);
         }
         // This function populates the infowindow when a marker is clicked
         function populateInfoWindow(marker, infowindow) {
