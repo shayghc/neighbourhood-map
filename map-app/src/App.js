@@ -53,7 +53,7 @@ export default class App extends React.Component {
         // This function populates the infowindow when a marker is clicked
         function populateInfoWindow(marker, infowindow) {
             // Ensure that the infowindow is not already open on this marker
-            if (infowindow.marker != marker) {
+            if (infowindow.marker !== marker) {
                 infowindow.marker = marker;
                 // InfoWindow content is specified here
                 infowindow.setContent('<div>' + marker.title + '</div>');
