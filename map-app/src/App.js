@@ -13,16 +13,16 @@ export default class App extends React.Component {
         });
         // Markers
         let locations = [
-            {title: 'Spinnaker Tower', location: {lat: 50.7954961, lng: -1.1086307}},
-            {title: 'HMS Warrior 1860', location: {lat: 50.7972356, lng: -1.1092372}},
-            {title: 'Round Tower', location: {lat: 50.789984, lng: -1.1064873}},
-            {title: 'Mary Rose Museum', location: {lat: 50.7973846, lng: -1.1104425}},
-            {title: 'Action Stations', location: {lat: 50.7999168, lng: -1.1085142}},
-            {title: 'Charles Dickens Birthplace Museum', location: {lat: 50.8054237, lng: -1.0912781}},
-            {title: 'The D-Day Story', location: {lat: 50.7780965, lng: -1.0835397}},
-            {title: 'Southsea Castle', location: {lat: 50.7792529, lng: -1.0926681}},
-            {title: 'Royal Marines Museum', location: {lat: 50.7820239, lng: -1.0687221}},
-            {title: 'The Royal Navy Submarine Museum', location: {lat: 50.7858205, lng: -1.1245246}}
+            {title: 'Spinnaker Tower', location: {lat: 50.79557519999999, lng: -1.1085171}},
+            {title: 'HMS Warrior 1860', location: {lat: 50.7982384, lng: -1.1092475}},
+            {title: 'Round Tower', location: {lat: 50.7905406, lng: -1.1088802}},
+            {title: 'Mary Rose Museum', location: {lat: 50.8022114, lng: -1.1088526}},
+            {title: 'Action Stations', location: {lat: 50.79991680000001, lng: -1.1070106}},
+            {title: 'Charles Dickens Birthplace Museum', location: {lat: 50.8070676, lng: -1.0872127}},
+            {title: 'The D-Day Story', location: {lat: 50.77964100000001, lng: -1.089412}},
+            {title: 'Southsea Castle', location: {lat: 50.777995, lng: -1.0888283}},
+            {title: 'Royal Marines Museum', location: {lat: 50.78429, lng: -1.053795}},
+            {title: 'The Royal Navy Submarine Museum', location: {lat: 50.7881692, lng: -1.1195995}}
         ];
 
         let largeInfoWindow = new window.google.maps.InfoWindow();
