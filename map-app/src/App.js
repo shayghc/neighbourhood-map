@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import SideNav from './SideNav'
 
 export default class App extends React.Component {
     state = {
@@ -66,7 +67,8 @@ export default class App extends React.Component {
                 }
             }
         ],
-        markers: []
+        markers: [],
+        sidebar: 'sidenav'
     }
 
     componentDidMount() {
@@ -110,26 +112,32 @@ export default class App extends React.Component {
                 infowindow.open(map, marker);
                 // Clear marker property if window is closed
                 infowindow.addListener('closeclick', function() {
-                    infowindow.setMarker(null);
+                    infowindow.setMarker(null); // Need to solve this. React does not recognise setMarker
                 })
             }
         }
     }
 
+    sidebarVisibility() {
+        let elementClass = (this.state.sidebar === 'sidenav') ? 'sidenav-active' : 'sidenav'
+        this.setState({'sidebar': elementClass})
+    }
+
+    closeNav = () => {
+        this.setState({sidebar: 'sidenav'})
+    }
+
     render() {
-        let spanStyle = {
-            fontSize:"160px",
-            cursor:"pointer",
-            color:"white"
-        }
-        return (<div id="app">
-            <header>
-                <span style={{spanStyle}} onClick="openNav()">&#9776;</span>
-                <h1>Portsmouth POIs</h1>
-            </header>
-            
-            <div id="map"/>
-        </div>
+
+        return (
+            <div id="app">
+                <header>
+                    <span onClick={this.sidebarVisibility.bind(this)}>&#9776;</span>
+                    <h1>Portsmouth POIs</h1>
+                </header>
+                <SideNav className={this.state.sidebar} close={this.closeNav} />
+                <div id="map" />
+            </div>
         );
     }
 }
