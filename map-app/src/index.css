@@ -20,6 +20,10 @@ header {
     color: white;
 }
 
+header h1 {
+    margin-left: 125px;
+}
+
 .header-active,
 #map-active {
     margin-left: 250px;
