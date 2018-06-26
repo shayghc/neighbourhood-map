@@ -1,4 +1,5 @@
 import React from 'react'
+import CreateList from './CreateList'
 
 class SideNav extends React.Component {
     render() {
@@ -11,11 +12,8 @@ class SideNav extends React.Component {
             <nav id="mySidenav" className={className}>
                 <ul className={{visibility}} style={linkStyle}>
                     <span><li className="closebtn" onClick={this.props.close}>&times;</li></span>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Clients</li>
-                    <li>Contact</li>
-                    <li>Returns</li>
+                    <button>Filter</button>
+                    <CreateList locations={this.props.locations}/>
                 </ul>
             </nav>
         )

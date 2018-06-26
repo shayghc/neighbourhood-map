@@ -135,7 +135,11 @@ export default class App extends React.Component {
                     <span onClick={this.sidebarVisibility.bind(this)}>&#9776;</span>
                     <h1>Portsmouth POIs</h1>
                 </header>
-                <SideNav className={this.state.sidebar} close={this.closeNav} />
+                <SideNav
+                    className={this.state.sidebar}
+                    close={this.closeNav}
+                    locations={this.state.locations}
+                />
                 <div id="map" />
             </div>
         );
