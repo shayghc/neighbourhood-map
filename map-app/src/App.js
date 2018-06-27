@@ -74,6 +74,7 @@ export default class App extends React.Component {
     componentDidMount() {
         const {locations} = this.state
         const markersList = []
+        // Generate map
         let map = new window.google.maps.Map(document.getElementById("map"), {
             center: {
                 lat: 50.7934612,
@@ -83,6 +84,7 @@ export default class App extends React.Component {
             mapTypeId: "roadmap"
         });
 
+        //
         let largeInfoWindow = new window.google.maps.InfoWindow();
         let bounds = new window.google.maps.LatLngBounds();
 
@@ -104,6 +106,11 @@ export default class App extends React.Component {
             // Create an onclick event for the infowindows
             marker.addListener('click', function() {
                 populateInfoWindow(this, largeInfoWindow);
+                // Add double bounce on click
+                this.setAnimation(window.google.maps.Animation.BOUNCE);
+                setTimeout(function(){
+                    marker.setAnimation(null);
+                }, 1450);
             });
             this.setState({markers: markersList})
             map.fitBounds(bounds);
