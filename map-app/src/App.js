@@ -91,7 +91,7 @@ export default class App extends React.Component {
         for (let i = 0; i < locations.length; i++) {
             let position = locations[i].location;
             let title = locations[i].title;
-            // Create a location per marker
+            // Create marker object
             let marker = new window.google.maps.Marker({
                 map: map,
                 position: position,
@@ -106,7 +106,7 @@ export default class App extends React.Component {
             // Create an onclick event for the infowindows
             marker.addListener('click', function() {
                 populateInfoWindow(this, largeInfoWindow);
-                // Add double bounce on click
+                // Add double bounce when clicked
                 this.setAnimation(window.google.maps.Animation.BOUNCE);
                 setTimeout(function(){
                     marker.setAnimation(null);
