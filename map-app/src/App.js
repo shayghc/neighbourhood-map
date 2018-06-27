@@ -110,7 +110,7 @@ export default class App extends React.Component {
                 this.setAnimation(window.google.maps.Animation.BOUNCE);
                 setTimeout(function(){
                     marker.setAnimation(null);
-                }, 1450);
+                }, 1400);
             });
             this.setState({markers: markersList})
             map.fitBounds(bounds);
