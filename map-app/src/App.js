@@ -90,7 +90,13 @@ export default class App extends React.Component {
             let position = locations[i].location;
             let title = locations[i].title;
             // Create a location per marker
-            let marker = new window.google.maps.Marker({map: map, position: position, title: title, animation: window.google.maps.Animation.DROP, id: title})
+            let marker = new window.google.maps.Marker({
+                map: map,
+                position: position,
+                title: title,
+                animation: window.google.maps.Animation.DROP,
+                id: title
+            })
             // Push each marker to the markers array
             markersList.push(marker);
             // Extend the boundaries of the map for the Markers
@@ -112,7 +118,7 @@ export default class App extends React.Component {
                 infowindow.open(map, marker);
                 // Clear marker property if window is closed
                 infowindow.addListener('closeclick', function() {
-                    infowindow.setMarker(null); // Need to solve this. React does not recognise setMarker
+                    infowindow.close(); // setMarker(null) will not work here, causes a cors error
                 })
             }
         }
