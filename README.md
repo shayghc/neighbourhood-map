@@ -7,7 +7,7 @@ Built on top of the [starter template](https://github.com/udacity/reactnd-projec
 ## Quickstart :point_left:
 
 1. Clone the repo
-2. cd into the map-app directory then run `npm install`
+2. cd into the map-app directory
 3. run `npm start` to activate the server.
 
 Follow these steps to open the app in your default browser.

@@ -11,4 +11,105 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Lato", "Arial", sans-serif;
+}
+
+header {
+    height: 70px;
+    background-color: #000;
+    color: white;
+}
+
+header h1 {
+    margin-left: 125px;
+}
+
+.header-active,
+#map-active {
+    margin-left: 250px;
+    transition: margin-left 0.5s;
+}
+
+span,
+h1 {
+    display: inline;
+    line-height: 70px;
+    font-size: 1.8em;
+}
+
+span {
+    margin-right: 50px;
+    margin-left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.ul {
+    display: none;
+}
+
+.ul-active {
+    display: block;
+    list-style: none;
+    font-size: 50px;
+    display: block;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav-active {
+    background-color: #000;
+    color: white;
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+
+li {
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+li:hover {
+    background-color: #3e3e3e;
+    padding-left: 10px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
 }
