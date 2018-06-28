@@ -84,7 +84,6 @@ export default class App extends React.Component {
             mapTypeId: "roadmap"
         });
         // Markers
-
         let largeInfoWindow = new window.google.maps.InfoWindow();
         let bounds = new window.google.maps.LatLngBounds();
         const labels = 'ABCDEFGHIJ'
