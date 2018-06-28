@@ -98,6 +98,7 @@ export default class App extends React.Component {
                 position: position,
                 title: title,
                 icon: 'http://maps.google.com/mapfiles/marker' + labels[i] + '.png',
+                letter: labels[i],
                 animation: window.google.maps.Animation.DROP,
                 id: title
             })
@@ -143,7 +144,6 @@ export default class App extends React.Component {
     }
 
     render() {
-
         return (
             <div id="app">
                 <header>
@@ -153,7 +153,7 @@ export default class App extends React.Component {
                 <SideNav
                     className={this.state.sidebar}
                     close={this.closeNav}
-                    locations={this.state.locations}
+                    locations={this.state.markers}
                 />
                 <div id="map" />
             </div>
