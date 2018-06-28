@@ -68,7 +68,7 @@ export default class App extends React.Component {
             }
         ],
         markers: [],
-        sidebar: 'sidenav'
+        sidebar: 'sidenav-active'
     }
 
     componentDidMount() {
