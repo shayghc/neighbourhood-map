@@ -87,6 +87,7 @@ export default class App extends React.Component {
         //
         let largeInfoWindow = new window.google.maps.InfoWindow();
         let bounds = new window.google.maps.LatLngBounds();
+        const labels = 'ABCDEFGHIJ'
 
         for (let i = 0; i < locations.length; i++) {
             let position = locations[i].location;
@@ -96,6 +97,7 @@ export default class App extends React.Component {
                 map: map,
                 position: position,
                 title: title,
+                icon: 'http://maps.google.com/mapfiles/marker' + labels[i] + '.png',
                 animation: window.google.maps.Animation.DROP,
                 id: title
             })
