@@ -69,6 +69,7 @@ export default class App extends React.Component {
         ],
         markers: [],
         sidebar: 'sidenav'
+        sidebar: 'sidenav-active'
     }
 
     componentDidMount() {
@@ -84,6 +85,7 @@ export default class App extends React.Component {
             mapTypeId: "roadmap"
         });
         // Markers
+        // Generate markers
         let largeInfoWindow = new window.google.maps.InfoWindow();
         let bounds = new window.google.maps.LatLngBounds();
         const labels = 'ABCDEFGHIJ'
@@ -151,7 +153,6 @@ export default class App extends React.Component {
                 <SideNav
                     className={this.state.sidebar}
                     close={this.closeNav}
-                    locations={this.state.locations}
                 />
                 <div id="map" />
             </div>
