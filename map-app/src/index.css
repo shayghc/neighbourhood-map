@@ -103,6 +103,7 @@ li {
 li:hover {
     background-color: #3e3e3e;
     padding-left: 10px;
+    cursor: pointer;
 }
 
 .closebtn {
