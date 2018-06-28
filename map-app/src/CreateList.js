@@ -6,8 +6,9 @@ class CreateList extends React.Component {
             <div>
                 {this.props.locations.map(location =>
                     <li key={location.title}>
-                        {location.title}
+                        {location.letter}. &nbsp;{location.title}
                     </li>
+
                 )}
             </div>
         )

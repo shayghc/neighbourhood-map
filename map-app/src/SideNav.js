@@ -12,8 +12,10 @@ class SideNav extends React.Component {
             <nav id="mySidenav" className={className}>
                 <ul className={{visibility}} style={linkStyle}>
                     <span><li className="closebtn" onClick={this.props.close}>&times;</li></span>
-                    <button>Filter</button>
-                    <CreateList locations={this.props.locations}/>
+                    <button className="btn">Filter</button>
+                    <CreateList
+                        locations={this.props.locations}
+                    />
                 </ul>
             </nav>
         )
