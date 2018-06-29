@@ -66,6 +66,7 @@ span:hover {
   padding: 10px 30px 10px 30px;
   border: solid #4510f7 1px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {
