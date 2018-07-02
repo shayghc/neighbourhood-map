@@ -8,7 +8,6 @@ class CreateList extends React.Component {
                     <li key={location.id}>
                         {location.id}. &nbsp;{location.title}
                     </li>
-
                 )}
             </div>
         )
