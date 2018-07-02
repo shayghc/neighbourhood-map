@@ -77,6 +77,7 @@ export default class App extends React.Component {
             }
         ],
         markers: [],
+        //filteredList: [],
         sidebar: "sidenav-active"
     };
 
@@ -100,7 +101,7 @@ export default class App extends React.Component {
                     lat: 50.7934612,
                     lng: -1.1098803
                 });
-            }, 5000);
+            }, 1000);
         });
 
         // Generate markers
@@ -120,9 +121,8 @@ export default class App extends React.Component {
                     "http://maps.google.com/mapfiles/marker" +
                     labels[i] +
                     ".png",
-                letter: labels[i],
                 animation: window.google.maps.Animation.DROP,
-                id: title
+                id: labels[i]
             });
             // Push each marker to the markers array
             markersList.push(marker);
