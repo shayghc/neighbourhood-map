@@ -4,15 +4,14 @@ class FilterList extends React.Component {
     render () {
         return (
             <div>
-                <label class="intro" for="pet-select">Choose POIs:</label>
-                <form>
+                <label className="intro" htmlFor="POI-filter">Select POIs:</label>
+                <form id="POI-filter">
                     {this.props.locations.map(location =>
                         <label key={location.id}>
-                            <input type="checkbox" value="" checked/>
+                            <input type="checkbox" defaultChecked />
                             {location.id}. &nbsp;{location.title}
                         </label>
                     )}
-                    <button>Filter</button>
                 </form>
             </div>
         )
