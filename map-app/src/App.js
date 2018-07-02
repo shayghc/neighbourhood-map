@@ -77,13 +77,16 @@ export default class App extends React.Component {
             }
         ],
         markers: [],
-        //filteredList: [],
+        filteredList: [],
         sidebar: "sidenav-active"
     };
 
     componentDidMount() {
         const { locations } = this.state;
         const markersList = [];
+        this.setState({
+            filteredList: locations
+        })
         // Generate map
         let map = new window.google.maps.Map(document.getElementById("map"), {
             center: {
