@@ -49,6 +49,23 @@ span:hover {
     cursor: pointer;
 }
 
+form {
+    font-size: 14px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    padding: 0 15px 15px 5px;
+}
+
+.intro {
+    padding: 0 0 10px 5px;
+}
+
 .btn {
   background: #0a3f62;
   background-image: -webkit-linear-gradient(top, #0a3f62, #4510f7);
@@ -62,7 +79,7 @@ span:hover {
   font-family: Arial;
   color: #ffffff;
   font-size: 16px;
-  margin: 50px 0 20px -30px;
+  margin: 50px 0 20px -40px;
   padding: 8px 30px 8px 30px;
   border: solid #4510f7 1px;
   text-decoration: none;
@@ -119,7 +136,7 @@ ul {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 10px;
+    padding: 10px 0;
 }
 
 li {

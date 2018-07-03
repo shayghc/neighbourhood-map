@@ -9,7 +9,7 @@ class FilterList extends React.Component {
                     {this.props.locations.map(location =>
                         <label key={location.id}>
                             <input type="checkbox" defaultChecked />
-                            {location.id}. &nbsp;{location.title}
+                            {location.id}.&nbsp;&nbsp;{location.title}
                         </label>
                     )}
                 </form>
