@@ -3,7 +3,12 @@ import Location from './Location'
 
 class CreateList extends React.Component {
     state = {
-        search: ''
+        filter: ''
+    }
+
+    updateFilter(event) {
+        // Limit text input to 25 characters
+        this.setState({filter: event.target.value.substr(0, 25)})
     }
 
     render() {
@@ -12,8 +17,9 @@ class CreateList extends React.Component {
             <div>
                 <input
                     type="text"
-                    value={this.state.search}
+                    value={this.state.filter}
                     placeholder="Enter text to filter the POIs"
+                    onChange={this.updateFilter.bind(this)}
                 />
                 {filteredPOIs.map((location) => {
                     return <Location location={location} key={location.id}/>
