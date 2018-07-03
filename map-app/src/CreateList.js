@@ -1,14 +1,22 @@
 import React from 'react'
+import Location from './Location'
 
 class CreateList extends React.Component {
+    state = {
+        search: ''
+    }
+
     render() {
+        let filteredPOIs = this.props.locations;
         return(
             <div>
-                {this.props.locations.map(location =>
-                    <li key={location.id}>
-                        {location.id}. &nbsp;{location.title}
-                    </li>
-                )}
+                <input
+                    type="text"
+                    value={this.state.search}
+                />
+                {filteredPOIs.map((location) => {
+                    return <Location location={location} key={location.id}/>
+                })}
             </div>
         )
     }
