@@ -13,6 +13,7 @@ class CreateList extends React.Component {
                 <input
                     type="text"
                     value={this.state.search}
+                    placeholder="Enter text to filter the POIs"
                 />
                 {filteredPOIs.map((location) => {
                     return <Location location={location} key={location.id}/>
