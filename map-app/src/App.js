@@ -178,7 +178,7 @@ export default class App extends React.Component {
                 <SideNav
                     className={this.state.sidebar}
                     close={this.closeNav}
-                    locations={this.state.markers}
+                    locations={this.state.locations}
                 />
                 <div id="map" />
             </div>
