@@ -12,6 +12,7 @@ class CreateList extends React.Component {
     }
 
     render() {
+        const labels = "ABCDEFGHIJ";
         let filteredPOIs = this.props.locations.filter(
             (location) => {
                 // Do not return if filter does not match location.title
@@ -19,6 +20,11 @@ class CreateList extends React.Component {
                 return location.title.toLowerCase().indexOf(this.state.filter.toLowerCase()) !== -1;
             }
         );
+        // Provide a lable/id for each POI
+        for (let i = 0; i < filteredPOIs.length; i++) {
+            filteredPOIs[i].id = labels[i];
+        }
+        
         return(
             <div>
                 <input
