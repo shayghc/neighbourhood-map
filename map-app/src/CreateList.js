@@ -12,7 +12,13 @@ class CreateList extends React.Component {
     }
 
     render() {
-        let filteredPOIs = this.props.locations;
+        let filteredPOIs = this.props.locations.filter(
+            (location) => {
+                // Do not return if filter does not match location.title
+                // -1 represents unable to find a match
+                return location.title.toLowerCase().indexOf(this.state.filter.toLowerCase()) !== -1;
+            }
+        );
         return(
             <div>
                 <input
