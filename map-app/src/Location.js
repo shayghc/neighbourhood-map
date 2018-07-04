@@ -2,9 +2,9 @@ import React from 'react'
 
 class Location extends React.Component {
     render() {
-        const { location, key } = this.props;
+        const { location, id } = this.props;
         return(
-            <li key={key}>
+            <li key={id}>
                 {location.id}.&nbsp;&nbsp;{location.title}
             </li>
         )

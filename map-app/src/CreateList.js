@@ -13,6 +13,8 @@ class CreateList extends React.Component {
 
     render() {
         const labels = "ABCDEFGHIJ";
+        let { markers } = this.props;
+        let filteredMarkers = [];
         let filteredPOIs = this.props.locations.filter(
             (location) => {
                 // Do not return if filter does not match location.title
@@ -20,11 +22,23 @@ class CreateList extends React.Component {
                 return location.title.toLowerCase().indexOf(this.state.filter.toLowerCase()) !== -1;
             }
         );
-        // Provide a lable/id for each POI
+
+        // Provide a lable/id for each POI and marker
         for (let i = 0; i < filteredPOIs.length; i++) {
             filteredPOIs[i].id = labels[i];
         }
-        
+
+        // Loop through markers and filter where titles match
+        // **************************************************
+        for (let i = 0; i < markers.length; i++) {
+            for (let j = 0; j < filteredPOIs.length; j++) {
+                if (markers[i].title === filteredPOIs[j].title) {
+                    filteredMarkers.push(markers[i])
+                }
+            }
+            // console.log('filteredMarkers = ', filteredMarkers)
+        }
+
         return(
             <div>
                 <input
@@ -34,7 +48,7 @@ class CreateList extends React.Component {
                     onChange={this.updateFilter.bind(this)}
                 />
                 {filteredPOIs.map((location) => {
-                    return <Location location={location} key={location.id}/>
+                    return <Location location={location} id={location.id}/>
                 })}
             </div>
         )

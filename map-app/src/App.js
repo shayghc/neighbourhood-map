@@ -1,7 +1,6 @@
 import React from "react";
 import "./index.css";
-import SideNav from "./SideNav";
-import Markers from './Markers'
+import SideNav from "./SideNav"
 
 export default class App extends React.Component {
     state = {
@@ -78,6 +77,7 @@ export default class App extends React.Component {
             }
         ],
         markers: [],
+        searchList: [],
         sidebar: "sidenav-active"
     };
 
@@ -180,6 +180,7 @@ export default class App extends React.Component {
                     className={this.state.sidebar}
                     close={this.closeNav}
                     locations={this.state.locations}
+                    markers={this.state.markers}
                 />
                 <div id="map" />
             </div>
