@@ -9,13 +9,14 @@ class SideNav extends React.Component {
             listStyle: "none"
         }
         return (
-            <nav id="mySidenav" className={className}>
-                <ul className={{visibility}} style={linkStyle}>
+            <nav className={className}>
+                <ul id="navUL" className={{visibility}} style={linkStyle}>
                     <span><li className="closebtn" onClick={this.props.close}>&times;</li></span>
-                    <button className="btn">Filter</button>
                     <CreateList
                         locations={this.props.locations}
-                    />
+                        markers={this.props.markers}
+                        map={this.props.map}
+                     />
                 </ul>
             </nav>
         )
